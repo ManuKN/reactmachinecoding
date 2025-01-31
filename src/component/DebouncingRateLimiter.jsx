@@ -10,7 +10,7 @@ function DebouncingRateLimiter() {
     }
 
     // Debounce function
-    debounce(func, delay) {
+    debounce(func, delay) {    
       return (...args) => {
         clearTimeout(this.timer); // Clear the previous timer
         this.timer = setTimeout(() => func.apply(this, args), delay); // Set a new timer

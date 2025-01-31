@@ -10,8 +10,11 @@ import ThrottlingRateLimiter from './component/ThrottlingRateLimiter.jsx';
 import ValidationForm from './component/ValidationForm.jsx';
 import data from './data/dataArray.js';
 import Counter from './component/Counter.jsx';
+import React19 from './component/React19.jsx';
+import ReactOptimitic from './component/ReactOptimitic.jsx';
+import OTPLogin from './component/OTPLogin.jsx';
 function App() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState("");
   return (
     <div className='App' style={{ display: 'flex', justifyContent: 'center' }}>
       {/* <Pagination data={data} /> */}
@@ -19,10 +22,13 @@ function App() {
       {/* <LikedList /> */}
       {/* <GridLights /> */}
       {/* <PromisesPlayground />
-      <DebouncingRateLimiter />
       <ThrottlingRateLimiter /> */}
-      <button onClick={() => setShow(true)}>show</button>
-      {show ? <Counter /> : <Counter />}
+      {/* <DebouncingRateLimiter /> */}
+      {/* <button onClick={() => setShow(true)}>show</button>
+      {show ? <Counter /> : <Counter />} */}
+      {/* <React19 name={show} setName={setShow} /> */}
+      <ReactOptimitic />
+      <OTPLogin />
     </div>
   );
 }

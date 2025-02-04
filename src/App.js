@@ -28,7 +28,7 @@ function App() {
       {show ? <Counter /> : <Counter />} */}
       {/* <React19 name={show} setName={setShow} /> */}
       <ReactOptimitic />
-      <OTPLogin />
+      {/* <OTPLogin /> */}
     </div>
   );
 }

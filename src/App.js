@@ -13,6 +13,7 @@ import Counter from './component/Counter.jsx';
 import React19 from './component/React19.jsx';
 import ReactOptimitic from './component/ReactOptimitic.jsx';
 import OTPLogin from './component/OTPLogin.jsx';
+import Debouncing from './component/Debouncing.jsx';
 function App() {
   const [show, setShow] = useState("");
   return (
@@ -27,8 +28,9 @@ function App() {
       {/* <button onClick={() => setShow(true)}>show</button>
       {show ? <Counter /> : <Counter />} */}
       {/* <React19 name={show} setName={setShow} /> */}
-      <ReactOptimitic />
+      {/* <ReactOptimitic /> */}
       {/* <OTPLogin /> */}
+      <Debouncing />
     </div>
   );
 }

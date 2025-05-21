@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
 
 function GridLights() {
-  let gridLights = [
-    { isActive: false },
-    { isActive: false },
-    { isActive: false },
-    { isActive: false },
-    { isActive: false },
-    { isActive: false },
-    { isActive: false },
-    { isActive: false },
-    { isActive: false },
-  ];
+  let gridLights = Array.from({ length: 9 }, () => ({
+    isActive: false
+  }))
   const [grid, setGrid] = useState(gridLights);
   const handleColoringBox = (index) => {
     setGrid((prev) =>
@@ -23,8 +15,9 @@ function GridLights() {
       setGrid((prev) =>
         prev.map((ele, i) => (index === i ? { ...ele, isActive: false } : ele))
       );
-    }, [3000]);
+    }, [1000]);
   };
+
   return (
     <div
       style={{
@@ -33,7 +26,7 @@ function GridLights() {
         alignItems: 'center',
       }}
     >
-      <p>shugfduhy</p>
+      <p>Grid layout</p>
       <div
         style={{
           display: 'grid',

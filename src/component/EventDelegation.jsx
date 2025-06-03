@@ -40,10 +40,6 @@ function EventDelegation() {
   };
 
 
-
-
-  console.log("noDivs", noDivs)
-
   return (
     <div>
       Nkn banthu
@@ -63,4 +59,4 @@ function EventDelegation() {
   )
 }
 
-export default EventDelegation
+export default EventDelegation;

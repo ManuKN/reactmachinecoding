@@ -11,6 +11,8 @@ function Debouncing() {
         }))
     }
 
+
+
     const debouncedValue = useThrottling(inputValue.name, 300);
     console.log("nkn", debouncedValue);
     return (

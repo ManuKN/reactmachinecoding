@@ -1,21 +1,8 @@
 // import { useState } from 'react';
 import './App.css';
-import EventDelegation from './component/EventDelegation';
-// import DebouncingRateLimiter from './component/DebouncingRateLimiter.jsx';
-// import EmiCalulator from './component/EmiCalulator.jsx';
-// import GridLights from './component/GridLights.jsx';
-// import LikedList from './component/LikedList.jsx';
-// import Pagination from './component/Pagination.jsx';
-// import PromisesPlayground from './component/PromisesPlayground.jsx';
-// import ThrottlingRateLimiter from './component/ThrottlingRateLimiter.jsx';
-// import ValidationForm from './component/ValidationForm.jsx';
-// import data from './data/dataArray.js';
-// import Counter from './component/Counter.jsx';
-// import React19 from './component/React19.jsx';
-// import ReactOptimitic from './component/ReactOptimitic.jsx';
-// import OTPLogin from './component/OTPLogin.jsx';
-// import Debouncing from './component/Debouncing.jsx';
-// import TodoList from './component/TodoList.jsx';
+import EventDelegation from './component/EventDelegation.jsx';
+
+// import EventDelegation from './component/EventDelegation.jsx';
 function App() {
   // const [show, setShow] = useState("");
   return (
@@ -30,11 +17,12 @@ function App() {
       {/* <button onClick={() => setShow(true)}>show</button>
       {show ? <Counter /> : <Counter />} */}
       {/* <React19 name={show} setName={setShow} /> */}
+      {/* <LikeButton postId={234214} initialLikes={8} /> */}
       {/* <ReactOptimitic /> */}
       {/* <OTPLogin /> */}
       {/* <Debouncing /> */}
-      {/* <TodoList /> */}
       <EventDelegation />
+      {/* <GridLayout /> */}
     </div>
   );
 }

@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 function EventDelegation() {
   const [isHovered, setIsHovered] = useState({
     id: null,
-    ishover: false,
-    addeableValue: 1
+    ishover: false
   });
+
+  const [addeableValue, setAddeableValue] = useState(1);
 
   const [noDivs, setNoDivs] = useState(
     Array.from({ length: 9 }, (_, i) => ({
@@ -15,48 +16,68 @@ function EventDelegation() {
     }))
   );
 
-
   const updateContentForDivs = (i) => {
-    let shouldUpdate = false;
-    setNoDivs((prev) =>
-      prev.map((data, index) => {
-        if (i === index && !data.content) {
-          shouldUpdate = true;
-          return {
-            ...data,
-            content: isHovered.addeableValue,
-          };
+    setNoDivs((prev) => {
+      const shouldUpdate = !prev[i].content;
+      const updated = prev.map((item, index) => {
+        if (index === i && shouldUpdate) {
+          return { ...item, content: addeableValue };
         }
-        return data;
-      })
-    );
+        return item;
+      });
 
-    if (shouldUpdate) {
-      setIsHovered((prev) => ({
-        ...prev,
-        addeableValue: prev.addeableValue + 1,
-      }));
-    }
+      if (shouldUpdate) {
+        setAddeableValue((prev) => prev + 1);
+      }
+
+      return updated;
+    });
   };
-
 
   return (
     <div>
-      Nkn banthu
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3 , 1fr)", gridTemplateRows: "repeat(3 , 1fr)", gap: "10px" }}>
+      <h3>Nkn banthu</h3>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3 , 1fr)",
+          gridTemplateRows: "repeat(3 , 1fr)",
+          gap: "10px"
+        }}
+      >
         {noDivs.map((data, i) => (
           <div
+            key={i}
             onClick={() => updateContentForDivs(i)}
-            onMouseEnter={() => setIsHovered({ id: i, ishover: true })}
-            onMouseLeave={() => setIsHovered({ id: null, ishover: false })}
-            style={{ padding: "12px", backgroundColor: isHovered.ishover && isHovered.id === i ? "darkred" : "red", margin: "8px" }} key={i}>
+            onMouseEnter={() =>
+              setIsHovered((prev) => ({
+                ...prev,
+                id: i,
+                ishover: true,
+              }))
+            }
+            onMouseLeave={() =>
+              setIsHovered((prev) => ({
+                ...prev,
+                id: null,
+                ishover: false,
+              }))
+            }
+            style={{
+              padding: "12px",
+              backgroundColor:
+                isHovered.ishover && isHovered.id === i ? "darkred" : "red",
+              margin: "8px",
+              color: "white"
+            }}
+          >
             div{data.value}
-            <p style={{ color: "green" }}>{data.content ?? ""}</p>
+            <p style={{ color: "lightgreen" }}>{data.content ?? ""}</p>
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default EventDelegation;

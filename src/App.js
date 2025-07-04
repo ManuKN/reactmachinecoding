@@ -1,9 +1,10 @@
 // import { useState } from 'react';
 import './App.css';
-import EventDelegation from './component/EventDelegation.jsx';
+import Drag from './component/Drag.jsx';
+
+
 
 // import EventDelegation from './component/EventDelegation.jsx';
-import GridLayout from './component/GridLayout.jsx';
 function App() {
   // const [show, setShow] = useState("");
   return (
@@ -21,9 +22,14 @@ function App() {
       {/* <LikeButton postId={234214} initialLikes={8} /> */}
       {/* <ReactOptimitic /> */}
       {/* <OTPLogin /> */}
+      {/* <TodoList /> */}
       {/* <Debouncing /> */}
-      <EventDelegation />
+      {/* <EventDelegation /> */}
       {/* <GridLayout /> */}
+      {/* <TodoList /> */}
+      {/* <Timer /> */}
+      {/* <ValidationForm /> */}
+      <Drag />
     </div>
   );
 }

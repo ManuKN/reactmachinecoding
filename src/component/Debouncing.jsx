@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import useThrottling from '../hooks/useThrottling'
+import React, { useState } from 'react';
+import useThrottling from '../hooks/useThrottling';
 
 function Debouncing() {
     const [inputValue, setInputValue] = useState({})

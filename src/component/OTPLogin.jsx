@@ -16,6 +16,7 @@ function OTPLogin() {
             otpRef.current[index + 1]?.focus();
         }
     };
+    console.log("ref", otpRef)
     return (
         <div>
             <p>This is one OTP</p>

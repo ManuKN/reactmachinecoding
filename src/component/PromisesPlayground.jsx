@@ -6,11 +6,13 @@ function PromisesPlayground() {
       resolve('Promise1 successfull');
     }, 3000);
   });
+
   const promise2 = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('Promise2 successfull');
     }, 3000);
   });
+
   const promise3 = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('Promise3 successfull');
@@ -99,7 +101,6 @@ function PromisesPlayground() {
           }, Math.random() * 2000);
         })
     );
-
     try {
       const result = await Promise.race(tasks); // Resolves or rejects the first settled promise
       console.log('Final result:', result);
@@ -209,6 +210,7 @@ function PromisesPlayground() {
       }
     });
   }
+
   const autoRetry = () => {
     retryOperation(unreliableOperation, 5, 1000);
     const timerId = setTimeout(() => {
